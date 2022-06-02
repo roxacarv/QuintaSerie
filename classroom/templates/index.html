@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>QuintaSerie</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <!-- CSS CUSTOM -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <script src='main.js'></script>
 </head>
+
 <body>
-    <h1>Bem-vindos à {{app_name}}!</h1>
+    <!--<h1>Bem-vindos à {{app_name}}!</h1>-->
+    <div class="create-class-wrapper">
+        <div class="create-class-info">
+            {% load static %}
+            <div class="img-center" style="background-image: url({% static 'imgs/empty_states_home.png' %});">
+        </div>
+        <div class="create-class-btn">
+            <div class="create-class">Criar turma</div>
+            <div class="enter-on-class">Participar da turma</div>
+        </div>
+    </div>
+    <!--<form action="/" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="OK">
+    </form>-->
+    <br>
 </body>
+
 </html>
