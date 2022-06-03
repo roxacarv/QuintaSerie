@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block 'content' %}
+{% load static %}
+
+<div class="top-menu">
+    <ul class="top-menu-list">
+        <li class="top-menu-item"><a href="/">Mural</a></li>
+        <li class="top-menu-item"><a href="/">Atividades</a></li>
+        <li class="top-menu-item"><a href="/">Pessoas</a></li>
+        <li class="top-menu-item"><a href="/">Notas</a></li>
+    </ul>
+</div>
+<div class="m-cover-wrapper">
+    <img class="m-cover-image" src="{% static 'imgs/material_book.webp' %}">
+    <h2>{{ classname }}</h2><br>
+    <div class="m-content">
+        <aside class="m-aside">
+            <div class="m-aside-code">
+                <h3>Codigo da turma:</h3>
+                <h3 style="color:rgb(255, 115, 0)">{{ classcode }}</h3>
+            </div>
+        </aside>
+        <main class="m-main">
+            <div class="form-wrapper">
+                <form class="form-class" action="{% url 'join_class' %}" method="GET">
+                    <b>{{ join_params }}</b><br>
+                    <label for="aviso">Criar um aviso: </label>
+                    <input class="form-class-item" type="text" name="name" placeholder="{{ classadm }}" style="display:none"><br><br>
+                    <input class="form-class-item" type="text" name="post"><br><br>
+                    <input class="form-class-item" type="submit" value="Criar aviso">
+                </form>
+            </div>
+            {% if post %}
+            <div class="m-post">
+                <h3> {{name}} </h3>
+                <h4> {{post}} </h4>
+                <h5> {{post_time}} </h5>
+                <h6> {{ test }}</h6>
+            </div>
+            {%endif%}
+        </main>
+    </div>
+</div>
+</div>
+
+{%endblock%}

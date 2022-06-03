@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block 'content' %}
+{% load static %}
+
+<div class="form-class-wrapper">
+    <form class="form-class" action="{% url 'create_class' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <label for="classadmin">Nome do administrador:</label>
+        <input class="form-class-item" type="text" name="classadmin"><br><br>
+        <label for="classname">Nome da turma:</label>
+        <input class="form-class-item" type="text" name="classname"><br><br>
+        <label for="discipline">Disciplina:</label>
+        <input class="form-class-item" type="text" name="discipline"><br><br>
+        <input class="form-class-item" type="submit" value="Criar turma">
+    </form>
+</div>
+
+{%endblock%}
