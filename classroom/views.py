@@ -21,6 +21,11 @@ rodrigo.email = "xavier@gmail.com"
 rodrigo.password = "123456"
 rodrigo.insert_update_to_database()'''
 
+# Fazendo query de usuários
+'''user1 = User.find_by_email("xavier@gmail.com")
+user2 = User.find_by_first_name("Carlos")
+user3 = User.find_by_id(3)'''
+
 def index(request):
     app_name = database.child('Data').child('ProjectName').get().val()
     if request.method == 'POST':
