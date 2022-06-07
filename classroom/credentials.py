@@ -8,3 +8,5 @@ config = {
     "measurementId": "G-RNM2R6QF9J",
     "databaseURL": "https://a-quinta-serie-default-rtdb.firebaseio.com"
 }
+
+SECURE_KEY = 'fxDOgnDWI60V5Jd5PLZzMd54y_iWtF949X2g7P8bEwQ='

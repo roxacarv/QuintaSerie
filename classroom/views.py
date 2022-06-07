@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 import pyrebase
 from django.shortcuts import redirect, render
 from . import credentials as conf
+from .User import User
 from .forms import NameForm
 import random
 import string
@@ -13,7 +14,12 @@ firebase = pyrebase.initialize_app(conf.config)
 authe = firebase.auth()
 database = firebase.database()
 
-database.child("users").update({"name": "Xavier", "pass": "1234567"})
+# Teste de inserção de usuário no BD usando o objeto User
+'''rodrigo = User()
+rodrigo.first_name = "Rodrigo"
+rodrigo.email = "xavier@gmail.com"
+rodrigo.password = "123456"
+rodrigo.insert_update_to_database()'''
 
 def index(request):
     app_name = database.child('Data').child('ProjectName').get().val()
