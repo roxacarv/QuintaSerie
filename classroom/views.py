@@ -15,11 +15,11 @@ authe = firebase.auth()
 database = firebase.database()
 
 # Teste de inserção de usuário no BD usando o objeto User
-'''rodrigo = User()
-rodrigo.first_name = "Rodrigo"
-rodrigo.email = "xavier@gmail.com"
+rodrigo = User()
+rodrigo.first_name = "Rodrigo2"
+rodrigo.email = "xavier3@gmail.com"
 rodrigo.password = "123456"
-rodrigo.insert_update_to_database()'''
+rodrigo.insert_update_to_database()
 
 # Fazendo query de usuários
 '''user1 = User.find_by_email("xavier@gmail.com")

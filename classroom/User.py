@@ -95,7 +95,7 @@ class User():
             "last_name": str(self._last_name),
             "email": str(self._email),
             "password": str(self._password),
-            "flags": self._flags,
+            "flags": json.dumps(self._flags),
             "status": int(self._status)
         }
         user = User.find_by_email(self._email)
@@ -137,7 +137,7 @@ class User():
                 new_user.last_name = v["last_name"]
                 new_user.email = v["email"]
                 new_user.password = v["password"]
-                new_user.flags = v["flags"]
+                new_user.flags = json.loads(v["flags"])
                 new_user.status = v["status"]
                 user_objects.append(new_user)
             return User.unpacked_objects(user_objects)
@@ -156,7 +156,7 @@ class User():
                 new_user.last_name = v["last_name"]
                 new_user.email = v["email"]
                 new_user.password = v["password"]
-                new_user.flags = v["flags"]
+                new_user.flags = json.loads(v["flags"])
                 new_user.status = v["status"]
                 user_objects.append(new_user)
             return User.unpacked_objects(user_objects)
@@ -175,7 +175,7 @@ class User():
                 new_user.last_name = v["last_name"]
                 new_user.email = v["email"]
                 new_user.password = v["password"]
-                new_user.flags = v["flags"]
+                new_user.flags = json.loads(v["flags"])
                 new_user.status = v["status"]
                 user_objects.append(new_user)
             return User.unpacked_objects(user_objects)
@@ -193,7 +193,7 @@ class User():
                 new_user.last_name = v["last_name"]
                 new_user.email = v["email"]
                 new_user.password = v["password"]
-                new_user.flags = v["flags"]
+                new_user.flags = json.loads(v["flags"])
                 new_user.status = v["status"]
                 user_objects.append(new_user)
             return user_objects
@@ -209,7 +209,7 @@ class User():
             new_user.last_name = user_db_object["last_name"]
             new_user.email = user_db_object["email"]
             new_user.password = user_db_object["password"]
-            new_user.flags = user_db_object["flags"]
+            new_user.flags = json.loads(user_db_object["flags"])
             new_user.status = user_db_object["status"]
             return new_user
         else:
