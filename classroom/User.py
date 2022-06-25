@@ -10,11 +10,8 @@ class User():
     DB = FIREBASE.database()
 
     def __init__(self, email=None, passwd=None, id=None):
-        self._email = None
-        self._password = None
-        if (isinstance(email, str) and isinstance(passwd, str)):
-            self._password: str = passwd
-            self._email: str = email
+        self._email = email
+        self._password = passwd
         if (isinstance(id, int)):
             self._id: int = id
         else:
